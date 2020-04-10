@@ -14,35 +14,29 @@ class StepperWizard extends StatelessWidget {
       child: Row(
         children: <Widget>[
           StepperStep(1, currentStep),
-          CustomPaint(painter: HorizontalLine()),
+          Expanded(
+            child: Divider(
+              thickness: 2,
+              color: Colors.black,
+            ),
+          ),
           StepperStep(2, currentStep),
-          CustomPaint(painter: HorizontalLine()),
+          Expanded(
+            child: Divider(
+              thickness: 2,
+              color: Colors.black,
+            ),
+          ),
           StepperStep(3, currentStep),
-          CustomPaint(painter: HorizontalLine()),
+          Expanded(
+            child: Divider(
+              thickness: 2,
+              color: Colors.black,
+            ),
+          ),
           StepperStep(4, currentStep),
         ],
       ),
     );
-  }
-}
-
-class HorizontalLine extends CustomPainter {
-  Paint _paint;
-
-  HorizontalLine() {
-    _paint = Paint()
-      ..color = Colors.black
-      ..strokeWidth = 2
-      ..strokeCap = StrokeCap.round;
-  }
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    canvas.drawLine(Offset(-15.0, 0.0), Offset(30.0, 0.0), _paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
   }
 }
